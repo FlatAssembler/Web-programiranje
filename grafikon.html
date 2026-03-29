@@ -87,6 +87,9 @@
                     display: block;
                     width: calc(100% - 20px);
                 }
+		#menu nav {
+		    width: calc(100vw - 20px);
+		}
             }
             main h1 {
                 grid-area: header;
@@ -109,10 +112,42 @@
             #menu nav {
                 display: none;
             }
+	    @keyframes myAnimation {
+	      from {
+		      height: 0;
+	      }
+	      to {
+		      height: 100px;
+	      }
+	    }
             #menu:hover nav {
                 display: block;
                 position: absolute;
+		background-color: transparent;
+		width: 300px;
+		max-width: calc(100vw - 20px);
+		animation: myAnimation 1s;
+		overflow: hidden;
             }
+	    #menu:hover nav ul {
+	    	list-style: none;
+	    }
+	    #menu:hover nav li {
+	        background-color: lightYellow;
+		border: 1px solid black;
+		text-align: left;
+		padding: 3px;
+	    }
+	    #menu:hover nav li a {
+	    	color: black;
+		text-decoration: none;
+	    }
+	    #menu nav li:hover {
+	    	background-color: blue;
+	    }
+	    #menu nav li:hover a{
+	        color: white;
+	    }
             #divSIzbornikom {
                 grid-area: menu;
             }
@@ -124,7 +159,12 @@
             <div id="divSIzbornikom">
             <button id="menu">izbornik
                 <nav>
-                    Neki izbornik...
+			<ul>
+				<li><a href="index.html">Početna stranica</a></li>
+				<li><a href="grafikon.html">Grafikon</a></li>
+				<li><a href="slike.html">Slike</a></li>
+			</ul>
+
                 </nav>
             </button>
             </div>
